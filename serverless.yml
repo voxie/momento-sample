@@ -1,0 +1,27 @@
+service: momento-sample
+
+frameworkVersion: '3'
+
+configValidationMode: error
+
+provider:
+  name: aws
+  region: ${env:AWS_REGION, 'us-east-1'}
+  logRetentionInDays: 14
+
+plugins:
+  - ./vendor/bref/bref
+
+functions:
+  app:
+    handler: app.php
+    architecture: arm64
+    runtime: php-82
+    layers:
+      - ${env:BREF_GRPC_LAYER_ARN}
+    memorySize: 1280
+    timeout: 28
+    environment:
+      MOMENTO_AUTH_TOKEN: ${env:MOMENTO_AUTH_TOKEN}
+      MOMENTO_CACHE_NAME: ${env:MOMENTO_CACHE_NAME}
+      MOMENTO_CACHE_KEY: ${env:MOMENTO_CACHE_KEY}

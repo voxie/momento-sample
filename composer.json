@@ -1,0 +1,15 @@
+{
+    "name": "acme/momento-sample",
+    "type": "project",
+    "license": "proprietary",
+    "require": {
+        "php": "~8.2.3",
+        "bref/bref": "2.0.8",
+        "momentohq/client-sdk-php": "1.2.0"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    }
+}
