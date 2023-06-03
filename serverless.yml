@@ -22,6 +22,7 @@ functions:
     memorySize: 1280
     timeout: 28
     environment:
+      BREF_LOOP_MAX: 100
       MOMENTO_AUTH_TOKEN: ${env:MOMENTO_AUTH_TOKEN}
       MOMENTO_CACHE_NAME: ${env:MOMENTO_CACHE_NAME}
       MOMENTO_CACHE_KEY: ${env:MOMENTO_CACHE_KEY}
